@@ -1,0 +1,118 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- The above 3 meta tags *must* come first in the head; any other head
+        content must come *after* these tags -->
+   <title>Ajax</title>
+       <!-- Bootstrap -->
+
+   <!-- build:css styles/main.css -->
+   <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+   <link href="styles/mystyles.css" rel="stylesheet">
+   <!-- endbuild -->
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <form class="form-horizontal" action="http://edi.iem.pw.edu.pl/bach/register/user/" method="post" id="form" role="form">
+          <div class="form-group col-xs-12">
+            <h2>Zarejestruj się</h2>
+          </div>
+          <div class="form-group">
+              <label for="firstname" class="col-sm-3 control-label">Imię</label>
+              <div class="col-sm-9">
+                <input type="text" name="firstname" id="firstname" class="form-control" required>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="lastname" class="col-sm-3 control-label">Nazwisko</label>
+              <div class="col-sm-9">
+                <input type="text" name="lastname" id="lastname" class="form-control" required>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="password" class="col-sm-3 control-label">Hasło</label>
+              <div class="col-sm-9">
+                <input type="password" name="password" id="password" class="form-control">
+              </div>
+              <div class="col-sm-9 col-sm-offset-3" id="password-message"></div>
+          </div>
+          <div class="form-group">
+              <label for="repeat-password" class="col-sm-3 control-label">Hasło powtórz</label>
+              <div class="col-sm-9">
+                <input type="password" name="repeat-password" id="repeat-password" class="form-control">
+              </div>
+              <div class="col-sm-9 col-sm-offset-3" id="repeat-password-message"></div>
+          </div>
+          <div class="form-group">
+              <label for="birthdate" class="col-sm-3 control-label">Data urodzenia</label>
+              <div class="col-sm-9">
+                <input type="date" name="birthdate" id="birthdate" min="1900-01-01" class="form-control">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="login" class="col-sm-3 control-label">Login</label>
+              <div class="col-sm-9">
+                <input type="text" name="login" id="login" class="form-control">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="pesel" class="col-sm-3 control-label">Pesel</label>
+              <div class="col-sm-9">
+                <input type="text" name="pesel" id="pesel" title="Podaj 11 cyfrowy pesel" class="form-control">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="sex" class="col-sm-3 control-label">Płeć</label>
+              <div class="col-sm-9">
+                <label class="radio-inline">
+                  <input type="radio" name="sex" value="male" id="male">
+                  Male
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="sex" value="female" id="female">
+                  Female
+                </label>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="photo" class="col-sm-3 control-label">Zdjęcie</label>
+              <div class="col-sm-9">
+                <input type="file" name="photo" id="photo" class="form-control" required>
+              </div>
+              <div class="col-sm-9 col-sm-offset-3">
+                <img id="preview" class="img-responsive"/>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="col-xs-12">
+                <button type="submit" name="send" value="Zatwierdź" id="send" class="btn btn-primary btn-lg btn-block">Wyślij</button>
+              </div>
+        </div>
+      </div>
+      </form>
+      </div>
+    </div>
+    <!-- build:js scripts/main.js -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
