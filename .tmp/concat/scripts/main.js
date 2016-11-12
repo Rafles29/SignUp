@@ -47,13 +47,13 @@ function checkPasswordStrength() {
     if (re.test(pass1.value)) {
         pass1.style.backgroundColor = goodColor;
         message.style.color = goodColor;
-        message.innerHTML = "Password is strong enough!";
+        message.innerHTML = "Hasło jest wystarczajaco silne!";
         passwordStrongValid = true;
     } else {
         pass1.style.backgroundColor = badColor;
         message.style.color = badColor;
-        message.innerHTML = "Passwords needs to contain at least 6 signs, " +
-            "one lowercase and uppercase letter, number and a special sign.";
+        message.innerHTML = "Hasło powinno zawierać przynajmniej 6 znakow, " +
+            "jedna mała litera, jedna duza litera, cyfra i znak specjalny.";
         passwordStrongValid = false;
     }
 }
@@ -72,7 +72,7 @@ function checkPass() {
         //the user that they have entered the correct password
         pass2.style.backgroundColor = goodColor;
         message.style.color = goodColor;
-        message.innerHTML = "Passwords Match!";
+        message.innerHTML = "Zgodność!";
         passwordMatchValid = true;
     } else {
         //The passwords do not match.
@@ -81,7 +81,7 @@ function checkPass() {
         pass2.style.backgroundColor = badColor;
         message.style.color = badColor;
         passwordMatchValid = false;
-        message.innerHTML = "Passwords Do Not Match!";
+        message.innerHTML = "Hasła się nie zgadzają!";
     }
 }
 document.getElementById("repeat-password").onkeyup = function () {
@@ -164,14 +164,19 @@ function PeselDecode(pesel)
 
 function checkPessel() {
   var pesel = document.getElementById('pesel');
+  var message = document.getElementById('pesel-message');
   var numer=$("#pesel").val();
   var wynik=PeselDecode(numer);
   if(!wynik.valid) {
     pesel.style.backgroundColor = badColor;
+    message.style.color = badColor;
+    message.innerHTML = "Niepoprawnie podany pesel!";
     peselValid = false;
   }
   else {
     pesel.style.backgroundColor = goodColor;
+    message.style.color = goodColor;
+    message.innerHTML = "Poprawnie podany pesel!";
     peselValid = true;
     if(wynik.sex === 'm') {
       document.getElementById('male').checked = "checked";
@@ -188,11 +193,14 @@ document.getElementById("pesel").onblur = function () {
     checkPessel();
 };
 function checkLogin() {
+  var message = document.getElementById('login-message');
   var name = $("#login").val();
   var login = document.getElementById('login');
   if (name === "") {
     login.style.backgroundColor = badColor;
     loginValid = false;
+    message.style.color = badColor;
+    message.innerHTML = "Podaj login!";
   }
   var url = "http://edi.iem.pw.edu.pl/bach/register/check/"+ name;
   $.getJSON(url , function(jd) {
@@ -202,10 +210,14 @@ function checkLogin() {
     if (valid.includes(":true")) {
       login.style.backgroundColor = badColor;
       loginValid = false;
+      message.style.color = badColor;
+      message.innerHTML = "Login jest juz zajęty!";
 
     }
     else {
       login.style.backgroundColor = goodColor;
+      message.style.color = goodColor;
+      message.innerHTML = "Login jest dostępny!";
       loginValid = true;
     }
     });
