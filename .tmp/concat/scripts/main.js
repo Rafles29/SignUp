@@ -21,7 +21,7 @@ var badColor = "#ff6666";
    $('#send').prop('disabled',true);
 
     var $fields = $(":input");
-    $fields.blur(function() {
+    $fields.change(function() {
         var $emptyFields = $fields.filter(function() {
             // remove the $.trim if whitespace is counted as filled
             return $.trim(this.value) === "" ;
